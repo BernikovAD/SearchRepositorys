@@ -15,4 +15,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "SearchRepositorys"
 include(":app")
- 
+include(":common")
+include(":ui")
+include(":core")
+include(":core:model")
+include(":features")
+include(":features:mainScreen")
+include(":features:detailsScreen")
+include(":core:domain")

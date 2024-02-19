@@ -16,7 +16,6 @@ dependencyResolutionManagement {
 rootProject.name = "SearchRepositorys"
 include(":app")
 include(":common")
-include(":ui")
 include(":core")
 include(":core:model")
 include(":features")

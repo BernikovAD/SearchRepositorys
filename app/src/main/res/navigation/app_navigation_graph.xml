@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.abernikov.mainscreen.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <deepLink
+            android:id="@+id/deepLinkMain"
+            app:uri="com.abernikov.searchrepositorys://main" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.abernikov.detailsscreen.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="repositoryName"
+            app:argType="string"
+            app:nullable="false" />
+        <argument
+            android:name="repositoryDescription"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="repositoryAvatar"
+            app:argType="string"
+            app:nullable="true" />
+        <deepLink
+            android:id="@+id/deepLinkDetails"
+            app:uri="com.abernikov.searchrepositorys://details/{repositoryName}{repositoryDescription}{repositoryAvatar}" />
+    </fragment>
+</navigation>

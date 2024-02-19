@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -46,9 +47,10 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    implementation(project(":ui"))
     implementation(project(":common"))
+    implementation(project(":core:model"))
     implementation(project(":features:mainScreen"))
+    implementation(project(":features:detailsScreen"))
 
     //glide
     api("jp.wasabeef:glide-transformations:4.3.0")
@@ -61,6 +63,7 @@ dependencies {
 
     // Hilt
     api("com.google.dagger:hilt-android:2.50")
+    implementation("com.google.dagger:hilt-android:2.50")
     kapt("com.google.dagger:hilt-android-compiler:2.50")
 
     //coroutines
@@ -73,4 +76,6 @@ dependencies {
     api("com.squareup.retrofit2:converter-gson:2.9.0")
     api("com.squareup.okhttp3:logging-interceptor:4.11.0")
     api("com.google.code.gson:gson:2.10.1")
+
+
 }
